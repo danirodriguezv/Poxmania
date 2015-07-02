@@ -1,0 +1,35 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link type="text/css" href="/css/bootstrap.min.css" rel="stylesheet" />
+<link type="text/css" href="/css/custom.css" rel="stylesheet" />
+<script src="/js/jquery-1.11.2.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+
+	
+
+	<div class="page-header">
+		<h1>
+			Panel de Administrador
+		</h1>
+	</div>
+	<p><a href="/addProd"> <button  class="btn btn-lg btn-primary btn-block">Añadir productos</button></a></p>
+	<p><a href="/adminProduct" ><button class="btn btn-lg btn-warning btn-block">Modificar/Borrar productos</button></a></p>
+	<p><a href="/showAllRequest"><button class="btn btn-lg btn-info btn-block">Ver pedidos</button></a></p>
+	<form action="/disconect">
+	<button class="btn btn-lg btn-danger btn-block" type="submit">Desconectar</button>
+	</form>
+	
+	
+</div>
+    
+ 
+
+
+
+</body>
+</html>

@@ -1,0 +1,159 @@
+*{
+	margin:0;
+	padding:0;
+	text-decoration:none;
+	list-style-type:none;
+}
+
+#nav{
+	height:50px;
+	
+}
+
+#basketIMG{
+	heigth:50%;
+}
+
+#inter{
+	background-color:#FF69B4;
+	height:30px;
+	width:100%;
+	margin:0;
+}
+
+#container2{
+	
+	margin-top:50px;
+	font-size:1.5em;
+}
+
+.container{
+	padding:0;
+	
+	
+}
+
+body {
+	background: #eee !important;	
+}
+
+.navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand
+.wrapper {	
+	color:#bf3288;
+}
+
+.glyphicon-home:before {
+	color:#bf3288;
+}
+
+.dropdown-menu>li>a:hover{
+	background-color:#bf3288;
+	color: silver;
+}
+
+.navbar-default .navbar-nav>li>a {
+  color: #bf3288;
+}
+.form-signin {
+  max-width: 380px;
+  padding: 15px 35px 45px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid rgba(0,0,0,0.1);  
+
+  .form-signin-heading,
+	.checkbox {
+	  margin-bottom: 30px;
+	}
+
+	.checkbox {
+	  font-weight: normal;
+	}
+
+	.form-control {
+	  position: relative;
+	  font-size: 16px;
+	  height: auto;
+	  padding: 10px;
+		@include box-sizing(border-box);
+
+		&:focus {
+		  z-index: 2;
+		}
+	}
+
+	input[type="text"] {
+	  margin-bottom: -1px;
+	  border-bottom-left-radius: 0;
+	  border-bottom-right-radius: 0;
+	}
+
+	input[type="password"] {
+	  margin-bottom: 20px;
+	  border-top-left-radius: 0;
+	  border-top-right-radius: 0;
+	}
+}
+
+#orders{
+	background-color: #bf3288;
+}
+
+
+#button-search{
+	background-color:#bf3288;
+	color:silver;
+}
+
+.info_price{
+	color: red;
+}
+.info{
+	color : green;
+}
+
+#button-add{
+	color: green;
+}
+
+.foot{
+	margin-bottom : 0;
+}
+
+.thumbnail>img {
+	height: 25%;
+	
+}
+
+
+#button-add {
+  color: #bf3288;
+  background-color:#d8eb3f;
+}
+
+.productshow{
+  margin-top: 5em;
+}
+
+.pill{
+	
+	margin-bottom:0.5em;
+}
+
+.pillone{
+	height: 18em;
+	margin-bottom:0.5em;
+}
+	
+.fieldCaption{
+	height : 8em;
+}
+
+.indexCaption{
+	height : 12em;
+}
+
+.footheader{
+	color: #BF3288;
+	font-size: 2em;
+}

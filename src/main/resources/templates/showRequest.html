@@ -1,0 +1,189 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link type="text/css" href="/css/bootstrap.min.css" rel="stylesheet" />
+<link type="text/css" href="/css/custom.css" rel="stylesheet" />
+<script src="/js/jquery-1.11.2.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12" id="nav">
+					<nav class="navbar navbar-default">
+						<div class="container-fluid">
+							<!-- Brand and toggle get grouped for better mobile display -->
+							<div class="navbar-header">
+								<button type="button" class="navbar-toggle collapsed"
+									data-toggle="collapse"
+									data-target="#bs-example-navbar-collapse-1">
+									<span class="sr-only">Toggle navigation</span> <span
+										class="icon-bar"></span> <span class="icon-bar"></span> <span
+										class="icon-bar"></span>
+								</button>
+								<a class="navbar-brand">POX<span>manía.com</span></a>
+							</div>
+
+							<!-- Collect the nav links, forms, and other content for toggling -->
+							<div class="collapse navbar-collapse"
+								id="bs-example-navbar-collapse-1">
+								<ul class="nav navbar-nav" id="title">
+									<li><a href="/adminProduct" class="glyphicon glyphicon-home" aria-hidden="true"></a></li>
+									<li class="dropdown"><a href="#" class="dropdown-toggle"
+										data-toggle="dropdown" role="button" aria-expanded="false">Categorias
+											<span class="caret"></span>
+									</a>
+										<ul class="dropdown-menu" role="menu">
+											
+											<li><a href ="/search_category_pe" >Pequeños electrodomesticos</a></li>
+											<li><a href="/search_category_t">Televisiones</a></li>
+											<li><a href="/search_category_i">Informática</a></li>
+											<li><a href="/search_category_v">Videoconsolas</a></li>
+										</ul></li>
+								</ul>
+								<form class="navbar-form navbar-left" role="search" action="/search-product">
+									<input type="text" class="form-control" name="product"
+					placeholder="Buscar producto" required="" autofocus="" />
+									
+									<button type="submit" class="btn btn-default" id="button-search">Buscar</button>
+								</form>
+								<form class="navbar-form navbar-left" role="search" action="/search-price">
+									<input type="text" class="form-control" name="min"
+					placeholder=" Desde €" required="" size="4"  />
+									<input type="text" class="form-control" name="max"
+					placeholder="Hasta €" required="" size="4" />
+									
+									<button type="submit" class="btn btn-default" id="button-search">Buscar</button>
+								</form>
+								<ul class="nav navbar-nav navbar-right">
+									<li><a href="/backAdmin">ADMINISTRADOR</a></li>
+									<li><a href="/disconect">Desconectar</a></li>
+									
+								</ul>
+							</div>
+							<!-- /.navbar-collapse -->
+						</div>
+						<!-- /.container-fluid -->
+
+					</nav>
+				</div>
+			</div>
+			
+			
+		</div>
+	</nav>
+
+
+	<div class="container" id="container2">
+		
+		<div class="row">
+			<div class="col-xs-6 col-md-6">
+			<h2>PEDIDOS NO PREPARADOS</h2>
+				<p th:each="request : ${notReadys}">
+				<div class="col-xs-12 col-md-12">
+					<div class="pill thumbnail">
+						<div class="fieldCaption caption">
+							<h3 th:text="|ID : ${request.id}|"></h3>
+
+							<p><h4  th:text="|Pedido a nombre: ${request.name} ${request.surnames}|"></h4></p>
+							<p><h4  th:text="|Direccion de envio: ${request.direction}|"></h4></p>
+
+							<div class="col-xs-6 col-md-6">
+							<p>
+								<a th:href="@{/showOneRequest(idRequest=${request.id})}"
+									class="btn btn-primary" role="button" id="button-view">Detalles
+								</a> <a th:href="@{/requestReady(idRequest=${request.id})}"
+									class="btn btn-default" role="button" id="button-add">Pedido enviado</a>
+									</p>
+									</div>
+							
+						</div>
+					</div>
+				</div>
+				</p>
+			</div>
+		<div class="col-xs-6 col-md-6">
+			<h2>PEDIDOS ENVIADOS</h2>
+				<p th:each="requestr : ${readys}">
+				<div class="col-xs-12 col-md-12">
+					<div class="pill thumbnail">
+						<div class="fieldCaption caption">
+							<h3 th:text="|ID: ${requestr.id}|"></h3>
+
+							<p><h4  th:text="|Pedido a nombre: ${requestr.name} ${requestr.surnames}|"></h4></p>
+							<p><h4  th:text="|Direccion de envio: ${requestr.direction}|"></h4></p>
+
+							<div class="col-xs-4 col-md-4">
+							<p>
+								<a th:href="@{/showOneRequest(idRequest=${requestr.id})}"
+									class="btn btn-primary" role="button" id="button-view">Detalles
+								</a> 
+								</p>
+									</div>
+							
+						</div>
+					</div>
+				</div>
+				</p>
+			</div>
+	
+		</div>
+
+	</div>
+
+	<nav class="navbar navbar-default navbar-bottom">
+
+		<div class="container">
+			<div class="panel panel-default">
+
+				<div class="row">
+  		<div class="col-md-3"><ul class="col3">
+		<li class="listHeader footheader">¿Quiénes somos?</li>
+				<li><a href="#">Condiciones generales de venta de Pixmania</a></li>
+				<li><a href="#">  Términos y condiciones uso de la plataforma</a></li>
+				<li><a href="#">Cookies</a></li>
+				<li><a href="#">Aviso legal</a></li>
+				<li><a href="#">Nuestros compromisos</a></li>
+			</ul>
+		</div>
+  		<div class="col-md-3"><ul class="col3">
+		<li class="listHeader footheader">Servicios</li>
+				<li><a href="#">Hacer un pedido</a></li>
+				<li><a href="#">Modos de entrega</a></li>
+				<li><a href="#">Pago</a></li>
+				<li><a href="#">Registrarse</a></li>
+				<li><a href="#">Seguimiento de mi pedido</a></li>
+				<li><a href="#">Anular mi pedido</a></li>
+				<li><a href="#">Mi seguimiento SPV</a></li>
+				<li><a href="#">Libro de fotos cewe</a></li>
+			</ul></div>
+  		<div class="col-md-3"><ul class="col3">
+		<li class="listHeader footheader">Ayuda</li>
+				<li><a href="#">FAQ</a></li>
+				<li><a href="#">Opiniones consumidores Pixmania</a></li>
+				<li><a href="#">Mapa del sitio</a></li>
+				<li><a href="#">Vender en Pixmania</a></li>
+				<li><a href="#">Condiciones*</a></li>
+				<li><a href="#">Contacto</a></li>
+			</ul></div>
+			<div class="col-md-3"><ul class="col3">
+		<li class="listHeader footheader">¡ÚNETE!</li>
+				<li><a href="#"><i class="icon-facebook icon-large"></i> <span>Facebook</span></a></li>
+				<li><a href="#"><i class="icon-twitter icon-large"></i> <span>Twitter</span></a></li>
+				<li><a href="#"><i class="icon-google-plus icon-large"></i> <span>Google+</span></a></li>
+				<li><a href="# "><i class="icon-pinterest icon-large"></i> <span>Pinterest</span></a></li>
+				<li><a href="# "><i class="icon-tuenti"></i> <span>Tuenti</span></a></li>
+			</ul></div>
+	</div>
+				<div class="panel-footer">Página web creada por Daniel
+					Rodríguez y Alejandro García</div>
+
+			</div>
+		</div>
+	</nav>
+</body>
+
+</html>
